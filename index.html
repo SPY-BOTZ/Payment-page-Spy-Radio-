@@ -44,13 +44,18 @@ color:transparent;
 font-size:14px;
 line-height:1.6;
 color:#555;
-margin-bottom:20px;
+margin-bottom:15px;
+text-align: left;
+background: #fff8f5;
+padding: 12px;
+border-radius: 12px;
+border: 1px dashed #ff9900;
 }
 .payto{
 font-size:16px;
 color:#555;
 font-weight:bold;
-margin-top:5px;
+margin-top:10px;
 }
 .name{
 font-size:27px;
@@ -131,6 +136,45 @@ color: #d32f2f;
 margin: 15px 0 5px 0;
 }
 
+/* FAQ Section Styling */
+.faq-section {
+text-align: left;
+margin-top: 20px;
+border-top: 2px solid #eee;
+padding-top: 15px;
+}
+.faq-title {
+font-size: 15px;
+font-weight: bold;
+color: #333;
+margin-bottom: 10px;
+text-align: center;
+}
+.faq-item {
+background: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 8px;
+margin-bottom: 8px;
+overflow: hidden;
+}
+.faq-question {
+padding: 10px 12px;
+font-size: 13px;
+font-weight: bold;
+color: #444;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.faq-answer {
+padding: 0 12px 10px 12px;
+font-size: 12px;
+color: #666;
+display: none;
+line-height: 1.5;
+}
+
 .modal {
 display: none;
 position: fixed;
@@ -199,9 +243,11 @@ justify-content: center;
 <div class="box">
 <img src="logo.png" class="logo">
 <div class="title">🔥 PREMIUM MEMBERSHIP 🔥</div>
+
 <div class="description">
-🎬 Get instant access to our exclusive content and private group.<br><br>
-✨ Select your plan below and complete payment.
+<b>🔥SPY 𝗠𝗢𝗩𝗜𝗘 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 🔥</b><br><br>
+🎬 Yahan aapko har tarah ki movies mil jayengi — Latest, Old, Bollywood, Hollywood & Regional.<br><br>
+✨ Ek hi Premium Membership mein massive movie collection ka access.
 </div>
 
 <div class="payto">Payment To:</div>
@@ -235,6 +281,26 @@ justify-content: center;
 <button class="telegram" onclick="winnerScreenshot()">👤 Owner Screenshot</button>
 <button class="channel-btn" onclick="openMainChannel()">📢 Main Channel</button>
 <button class="request-btn" onclick="openMovieRequest()">🎬 Movie Request Group</button>
+
+<div class="faq-section">
+<div class="faq-title">❓ Frequently Asked Questions</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">Payment ke baad membership kab milegi? <span>▼</span></div>
+<div class="faq-answer">Payment ka screenshot owner ko bhejne ke baad turant aapko private group ka access mil jayega.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">Access kaise milega? <span>▼</span></div>
+<div class="faq-answer">Owner screenshot verify karke aapko private channel/group ki invite link bhejenge.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">Kya sabhi payment apps chalte hain? <span>▼</span></div>
+<div class="faq-answer">Haan, aap Google Pay, PhonePe, Paytm ya kisi bhi UPI app se payment kar sakte hain.</div>
+</div>
+</div>
+
 </div>
 
 <div id="paymentModal" class="modal">
@@ -296,9 +362,20 @@ window.location.href = finalUrl;
 closePaymentModal();
 }
 
+function toggleFaq(element){
+let answer = element.nextElementSibling;
+if(answer.style.display === "block"){
+answer.style.display = "none";
+element.querySelector("span").innerText = "▼";
+} else {
+answer.style.display = "block";
+element.querySelector("span").innerText = "▲";
+}
+}
+
 function winnerScreenshot(){ window.open("https://t.me/botmaster55", "_blank"); }
-function openMainChannel(){ window.open("https://t.me/MovieSearchAutoGroup", "_blank"); }
-function openMovieRequest(){ window.open("https://t.me/Movie_Requst_YT", "_blank"); }
+function openMainChannel(){ window.open("https://t.me/YOUR_MAIN_CHANNEL", "_blank"); }
+function openMovieRequest(){ window.open("https://t.me/YOUR_REQUEST_CHANNEL", "_blank"); }
 </script>
 
 </body>
